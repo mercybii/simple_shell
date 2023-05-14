@@ -1,8 +1,9 @@
-#define SIMPLE_SHELL_H
 #ifndef SIMPLE_SHELL_H
+#define SIMPLE_SHELL_H
+
 
 int prog_fnd(_mn *bii);
-char **_tok(_mn  *bii);
+char **_tok(_mn *bii);
 int blt_in_lst(_mn *bii);
 void _token(_mn *bii);
 void alias_exp(_mn *bii);
