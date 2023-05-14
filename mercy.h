@@ -1,15 +1,7 @@
-#define BII_H
-#ifndef BII_H
+#ifndef MERCY_H
+#define MERCY_H
 
 
-/**
- * function prototypes and structers
- *
- */
-
-/**
- * header files
- */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -48,4 +40,4 @@
 
 #define HELP_INFO_SEARCH
 
-#endif 
+#endif
