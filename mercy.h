@@ -22,11 +22,11 @@
 #define B_SIZ 1024
 
 
-#include "data_handling.h" /* include struters */
 
-#include "builtins.h" /* include builtins */
-
-#include "func_library.h" /*simple_shell functions*/
+#include "data_handling.h"
+#include "builtins.h"
+#include "func_library.h"
+#include "simple_shell.h"
 
 #define CD_HELP_INFO
 
