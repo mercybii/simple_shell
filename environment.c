@@ -9,7 +9,7 @@
  * Return: value of the variables
  */
 
-char environ_key(char *key, _mn *bii)
+char *environ_key(char *key, _mn *bii)
 {
 	int x;
 	int len = 0;
@@ -37,7 +37,7 @@ char environ_key(char *key, _mn *bii)
 void print_env(_mn *bii)
 {
 	int x;
-	
+
 	for (x = 0; bii->env[x]; x++)
 	{
 		_print(bii->env[x]);
@@ -49,6 +49,7 @@ void print_env(_mn *bii)
  * environ_set - overrides the variables in the environment
  * @key: variable pointer
  * @bii: struct pointer
+ * @var: new variable
  * Return: 1 if successful
  */
 
@@ -92,4 +93,24 @@ int environ_del(char *key, _mn *bii)
 	int x;
 	int len = 0;
 
+	if (key == NULL || bii->env[x] == NULL)
+		return (0);
+	len = str_length(key);
+	for (x = 0; bii->env[x]; x++)
+	{
+		if (str_compare(key, bii->env[x], len) &&
+		bii->env[x][len] == '=')
+		{
+			free(bii->env[x]);
+			x++;
+			for (; bii->env[x]; x++)
+			{
+				bii->env[x - 1] = bii->env[x];
+			}
+			bii->env[x - 1] = NULL;
+			return (1);
+		}
+	}
+	return (0);
+}
 
