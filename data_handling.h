@@ -36,10 +36,10 @@ _mn;
  *
  */
 
-typedef struct builtins
+typedef struct -mn
 {
 	char *builtins
 	int (*functions)(_mn *bii);
-} builtins;
+} mn;
 
 #endif
