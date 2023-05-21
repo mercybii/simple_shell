@@ -1,4 +1,7 @@
+#include "function.h"
 #include "mercy.h"
+#include "simple_shell.h"
+#include "data_handling.h"
 
 /**
  * str_length - return the lrngth of a string.
@@ -16,7 +19,7 @@ int str_length(char *string)
 		return (0);
 
 	while (string[length++] != '\0')
-	
+
 		return (--length);
 
 }

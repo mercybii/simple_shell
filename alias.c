@@ -1,6 +1,7 @@
-#include "functions.h"
+#include "function.h"
 #include "mercy.h"
 #include "simple_shell.h"
+#include "data_handling.h"
 
 /**
  * _alias - controls the addition or removal of aliases

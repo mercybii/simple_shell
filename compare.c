@@ -1,4 +1,7 @@
 #include "mercy.h"
+#include "function.h"
+#include "simple_shell.h"
+#include "data_handling.h"
 
 /**
  * str_compare - Compare two strings

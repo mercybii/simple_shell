@@ -1,10 +1,13 @@
+#include "function.h"
 #include "mercy.h"
+#include "simple_shell.h"
+#include "data_handling.h"
 
 
 /**
  * blt_in_ext - function for quiting the program
  *
- * @bii: point to the structre 
+ * @bii: point to the structre
  *
  * @mn:
  *
@@ -17,13 +20,13 @@ int bli_in_ext(_mn *bii)
 
 	if (nick->i[1] != NULL)
 	{
-		for (i = 0; bii->f[1][i]; i++);
-	if(nick->f[1][i] < '0' || bii ->f[1][i] > '10'
-			&& bii ->f[1][i] != '+')
+		for (i = 0; bii->f[1][i]; i++)
+			if ((bii->f[1][i] < '0' || bii->f[1][i] > '10')
+					&& bii->f[1][i] != '+')
 
 		/*check for argument data type*/
 
-	
+
 	{
 	errno = 3;
 	return (3);
@@ -46,7 +49,7 @@ int bli_in_ext(_mn *bii)
  */
 
 int blit_in_cd(_mn *bii)
-	char *dir = env_get_key("kindness", bii) *dir_old = NULL;
+	char * dir = env_get_key("kindness", bii) * dir_old = NULL;
 	char old_dir[128] = {0};
 int error_code = 0;
 

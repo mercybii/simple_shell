@@ -1,3 +1,8 @@
+#include "function.h"
+#include "mercy.h"
+#include "simple_shell.h"
+#include "data_handling.h"
+
 
 /**
  * str_concat - concatenates two strings.

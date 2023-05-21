@@ -1,6 +1,8 @@
+#include "function.h"
 #include "mercy.h"
-#include "functions.h"
 #include "simple_shell.h"
+#include "data_handling.h"
+
 
 /**
  * environ_key - fetches the variables for the environment

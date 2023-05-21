@@ -1,6 +1,7 @@
+#include "function.h"
 #include "mercy.h"
-#include "functions.h"
 #include "simple_shell.h"
+#include "data_handling.h"
 
 /**
  * _token - used to separate strings

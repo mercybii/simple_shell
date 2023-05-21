@@ -1,4 +1,7 @@
+#include "function.h"
 #include "mercy.h"
+#include "simple_shell.h"
+#include "data_handling.h"
 
 /**
  * -execve - executes a command
@@ -18,7 +21,7 @@ int _execve(_bii *bii)
 	retval = blt_in_lst(bii);
 
 	if (retval != -1)
-		return(retval);
+		return (retval);
 
 	retval = prog_find(bii);
 	if (retval != -1)
@@ -48,10 +51,9 @@ int _execve(_bii *bii)
 				wait(&status);
 				if (WIFEXITED(status))
 					errno = WEXITSTATUS(status);
-				else if(WIFSIGNALED(status)
-						errno =128 + wtermsig(status)
-						}
+				else if (WIFSIGNALED(status))
+						errno = 128 + wtermsig(status)
 						}
 						return (0);
 						}
-	
+						

@@ -1,14 +1,17 @@
+#include "function.h"
 #include "mercy.h"
 #include "simple_shell.h"
+#include "data_handling.h"
+
 
 /**
- * main - Entry point
+ * main - it is the main Entry point
  *
- * @ac: number of cl arguments
+ * @ac: number of  arguments
  * @av: command line argument
  * @ev: Enviroment variables
  *
- * Returs: 0 when successfull
+ * Return: 0 when successfull
  */
 
 int main(int ac, char *av[], char *ev[])
