@@ -24,8 +24,7 @@
 
 
 #include "data_handling.h"
-#include "builtins.h"
-#include "func_library.h"
+#include "function.h"
 #include "simple_shell.h"
 
 #define CD_HELP_INFO
