@@ -2,7 +2,7 @@
 #include "function.h"
 #include "simple_shell.h"
 #include "data_handling.h"
-
+#include "builtins.h"
 /**
  * str_compare - Compare two strings
  * @string1: String one, or the shorter

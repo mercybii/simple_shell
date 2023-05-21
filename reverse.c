@@ -2,6 +2,8 @@
 #include "mercy.h"
 #include "simple_shell.h"
 #include "data_handling.h"
+#include "builtins.h"
+
 
 /**
  * str_reverse - reverses a string.

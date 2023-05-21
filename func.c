@@ -2,7 +2,7 @@
 #include "mercy.h"
 #include "simple_shell.h"
 #include "data_handling.h"
-
+#include "builtins.h"
 /**
  * str_length - return the lrngth of a string.
  *
