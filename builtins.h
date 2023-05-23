@@ -1,18 +1,52 @@
 #ifndef BUILTINS_H
 #define BUILTINS_H
 
-/*
- * prototypes
- */
 
-int blt_in_ext(_mn *bii);
-int blt_in_cd(_mn *bii);
-int st_wk_dir(_mn *bii, char *new_dir);
-int blt_in_hlp(_mn *bii);
-int blt_in_alias(_mn *bii);
-int blt_in_env(_mn *bii);
-int blt_set_env(_mn *bii);
-int blt_in_unset_ev(_mn *bii);
-int blt_in_lst(_mn *bii);
+int loopsh(char **);
 
-#endif 
+
+int is_cmd(info_t *, char *);
+char *find_path(info_t *, char *, char *);
+char *dup_chars(char *, int, int);
+
+
+void fock_cmd(info_t *);
+void find_cmd(info_t *);
+int find_builtin(info_t *);
+int hsh(info_t *, char **);
+
+
+void _eputs(char *);
+int _eputchar(char);
+int _putfd(char c, int fd);
+int _putsfd(char *str, int fd);
+
+
+int _strlen(char *);
+int _strcmp(char *, char *);
+char *_strcat(char *, char *);
+char *starts_with(const char *, const char *);
+
+
+char *_strcpy(char *, char *);
+char *_strdup(const char *);
+void _puts(char *);
+int _putchar(char);
+
+
+char *_strncpy(char *, char *, int);
+char *_strchr(char *, char);
+char *_strncat(char *, char *, int);
+
+char **strtow(char *, char *);
+char **strtow2(char *, char);
+
+char *_memset(char *, char, unsigned int);
+void ffree(char **);
+void *_realloc(void *, unsingned int, unsigned int);
+
+int bfree(void **);
+
+
+#endif
+

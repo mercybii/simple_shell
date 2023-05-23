@@ -2,6 +2,12 @@
 #define MERCY_H
 
 
+#include "function.h"
+#include "mercy.h"
+#include "simple_shell.h"
+#include "data_handling.h"
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,24 +20,27 @@
 #include <unistd.h>
 #include <stddef.h>
 
-#define UNUSED __attribute__((unused))
-#define COMMAND_PROMPT "HELLO WORLD "
+#define READ_BUF_SIZE 1024
+#define WRITE_BUF_SIZE 1024
+#define  BUF_FLUSH -1
 
 
 #define B_SIZ 1024
 
 
+#define CMD_NORM
+#define CMD_OR
+#define CMD_AND
+#define CMD_CHAIN
 
-#define CD_HELP_INFO
 
-#define EXIT_HELP_INFO
+#define CONVERT_LOWERCASE
+#define CONVERT_STRTOK
 
-#define ENVIRONMENT_HELP_INFO
 
-#define SETENV_HELP_INFO
+#define HIST_FILE
 
-#define UNSETENV_HELP_INFO
+#define HIST_MAX
 
-#define HELP_INFO_SEARCH
 
 #endif
