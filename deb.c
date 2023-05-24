@@ -26,7 +26,6 @@ int main(int ac, char *av[], char *ev[])
 
 	if (isatty(STDIN_FILENO) && isatty(STDOUT_FILENO) && ac == 1)
 	{
-	
 		errno = 2;
 		prompt = COMMAND_PROMPT;
 	}
