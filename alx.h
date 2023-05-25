@@ -1,11 +1,6 @@
 #ifndef ALX_H
 #define ALX_H
 
-/**
- * is the main hearder
- * File drp: Contains macros, func prototypes and structers
- */
-
 
 /*File inclusion*/
 
