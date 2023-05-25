@@ -46,7 +46,7 @@ void ctrl_c_hndl(int opr UNUSED)
  * @env: the environment variables
  */
 
-void lion(_mn @bii, int ac, char *av[], char **env)
+void lion(_mn *bii, int ac, char *av[], char **env)
 {
 	int x = 0;
 
