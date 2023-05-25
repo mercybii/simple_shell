@@ -3,6 +3,7 @@
 
 /**
  * p_alias - add or remove alias
+ *
  * @bii: a pointer to struct
  * @alias: name to  be printed
  *
