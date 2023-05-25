@@ -96,6 +96,7 @@ void lion(_mn @bii, int ac, char *av[], char **env)
 void manu(char *prompt, _mn *bii)
 {
 	int error_code = 0, string_len = 0;
+
 	while (++(bii->d))
 	{
 		 _print(prompt);
