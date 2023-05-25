@@ -114,7 +114,7 @@ void manu(char *prompt, _mn *bii)
 			_token(bii);
 			if (bii->f[0])
 			{
-				error_code = execve(bii);
+				error_code = _execve(bii);
 				if (error_code != 0)
 					_print_error(error_code, bii);
 			}
