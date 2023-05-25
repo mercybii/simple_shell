@@ -77,8 +77,8 @@ else
 bii->e = open(av[1], O_RDONLY);
 if (bii->e == -1)
 {
-printf("%s", bii->a);
-_print(": 0: dont open ");
+_print(bii->a);
+_print(": >: no can not");
 _print(av[1]);
 _print("\n");
 exit(127);
