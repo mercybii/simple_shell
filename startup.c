@@ -73,7 +73,7 @@ void lion(_mn *bii, int ac, char *av[], char **env)
 	bii->env = malloc(sizeof(char *) * 50);
 	if (env)
 	{
-		for (; env[i]; x++)
+		for (; env[x]; x++)
 		{
 			bii->env[x] = str_duplicate(env[x]);
 		}
@@ -118,7 +118,7 @@ void manu(char *prompt, _mn *bii)
 				if (error_code != 0)
 					_print_error(error_code, bii);
 			}
-			free_reccurent_data(bii);
+			free_recurrent_data(bii);
 		}
 	}
 }
