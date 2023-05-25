@@ -29,15 +29,16 @@ bii->f = NULL;
  *
  * Return:(void)
  */
+
 void free_all_data(_mn *bii)
 {
 if (bii->e != 0)
-	{
+{
 if (close(bii->e))
 perror(bii->a);
-	}
+}
 free_recurrent_data(bii);
-free_array_of_pointers(bii->ev);
+free_array_of_pointers(bii->env);
 free_array_of_pointers(bii->h);
 }
 
@@ -48,14 +49,15 @@ free_array_of_pointers(bii->h);
  *
  * Return: (void)
  */
+
 void free_array_of_pointers(char **array)
 {
-int i;
+int f;
 
 if (array != NULL)
 {
-for (i = 0; array[i]; i++)
-free(array[i]);
+for (f = 0; array[f]; f++)
+free(array[f]);
 
 free(array);
 array = NULL;

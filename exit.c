@@ -5,24 +5,23 @@
  * blt_in_ext - A func that quits the shell program
  *
  * @bii: A pointer to struct
- *
- * Return: 0 if successfull else -1
+ * Return: 0 if successfull
  *
  */
 
 
 int blt_in_ext(_mn *bii)
 {
-int jay;
+int i;
 
 if (bii->f[1] != NULL)
 {
-
-for (jay = 0; bii->f[1][jay]; jay++)
-if ((bii->f[1][jay] < '0' || bii->f[1][jay] > '9')
-&& bii->f[1][jay] != '+')
+/*Check argument data type*/
+for (i = 0; bii->f[1][i]; i++)
+if ((bii->f[1][i] < '0' || bii->f[1][i] > '9')
+&& bii->f[1][i] != '+')
 {
-				/*For non-numeric args*/
+/*For non-numeric args*/
 errno = 2;
 return (2);
 }
@@ -35,10 +34,8 @@ exit(errno);
 
 /**
  * blt_in_cd - A func that changes current dir
- *
  * @bii: A pointer to struct
- *
- * Return: 0 if successfull else -1
+ * Return: 0 if successfull
  *
  */
 
@@ -79,7 +76,6 @@ return (0);
 
 /**
  * st_wk_dir - Sets PWD
- *
  * @bii: A pointer to struct
  * @new_dir: A pointer to the path of new_dir
  *
@@ -95,7 +91,8 @@ int err_code = 0;
 getcwd(old_dir, 128);
 
 if (!str_compare(old_dir, new_dir, 0))
-{
+
+{	
 err_code = chdir(new_dir);
 if (err_code == -1)
 {
@@ -111,7 +108,6 @@ return (0);
 
 /**
  * blt_in_hlp - A func that displays env variables
- *
  * @bii: A pointer to struct
  *
  * Return: 0 if successfull
@@ -158,7 +154,6 @@ return (0);
 
 /**
  * blt_in_alias - A func that sets aliases
- *
  * @bii: A pointer to struct
  *
  * Return: 0 for successfull code
@@ -167,14 +162,15 @@ return (0);
 
 int blt_in_alias(_mn *bii)
 {
-	int i = 0;
+int i = 0;
 
-	/*print env variables*/
+/*print env variables*/
 if (bii->f[1] == NULL)
 return (p_alias(bii, NULL));
 
 while (bii->f[++i])
 {
+/*Set env variables*/
 if (count_characters(bii->f[i], "="))
 set_alias(bii->f[i], bii);
 else

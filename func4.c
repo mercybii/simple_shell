@@ -13,12 +13,12 @@
 
 void long_to_string(long number, char *string, int base)
 {
-int index = 0, inNegative = 0;
+int start = 0, inNegative = 0;
 long cociente = number;
 char letters[] = {"0123456789abcdef"};
 
 if (cociente == 0)
-string[index++] = '0';
+string[start++] = '0';
 
 if (string[0] == '-')
 inNegative = 1;
@@ -26,15 +26,15 @@ inNegative = 1;
 while (cociente)
 {
 if (cociente < 0)
-string[index++] = letters[-(cociente % base)];
+string[start++] = letters[-(cociente % base)];
 else
-string[index++] = letters[cociente % base];
+string[start++] = letters[cociente % base];
 cociente /= base;
 }
 if (inNegative)
-string[index++] = '-';
+string[start++] = '-';
 
-string[index] = '\0';
+string[start] = '\0';
 str_reverse(string);
 }
 
@@ -49,15 +49,15 @@ str_reverse(string);
 
 int _atoi(char *s)
 {
-int sign = 1;
+int k = 1;
 unsigned int number = 0;
 
 while (!('0' <= *s && *s <= '9') && *s != '\0')
 {
 if (*s == '-')
-sign *= -1;
+k *= -1;
 if (*s == '+')
-sign *= +1;
+k *= +1;
 s++;
 }
 while ('0' <= *s && *s <= '9' && *s != '\0')
@@ -66,7 +66,7 @@ while ('0' <= *s && *s <= '9' && *s != '\0')
 number = (number * 10) + (*s - '0');
 s++;
 }
-return (number *sign);
+return (number *k);
 }
 
 
@@ -91,4 +91,3 @@ counter++;
 }
 return (counter);
 }
-

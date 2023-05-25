@@ -3,7 +3,6 @@
 
 /**
  * blt_in_lst - a program that execute builtin
- *
  * @bii: a pointer to struct
  *
  * Return: Return a function value,otherwise returns -1.
@@ -11,7 +10,7 @@
 
 int blt_in_lst(_mn *bii)
 {
-int j;
+int iterator;
 builtins options[] = {
 {"exit", blt_in_ext},
 {"help", blt_in_hlp},
@@ -23,14 +22,15 @@ builtins options[] = {
 {NULL, NULL}
 };
 
+	/*the structure*/
 
-for (j = 0; options[j].builtin != NULL; j++)
+for (iterator = 0; options[iterator].builtin != NULL; iterator++)
 {
-if (str_compare(options[j].builtin, bii->c, 0))
+if (str_compare(options[iterator].builtin, bii->c, 0))
 {
+			/* execute a function */
 
-
-return (options[j].function(bii));/* execute a function */
+return (options[iterator].function(bii));
 }
 }
 return (-1);

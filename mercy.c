@@ -1,18 +1,17 @@
 #include "alx.h"
 
 /**
- * blt_in_ev - displays environment variables
- *
+ * blt_in_env - displays environment variables
  * @bii: a pointer to struct
- *
  * Return: 0 if sucessful, or otherwise if fails.
  */
-int blt_in_ev(_mn *bii)
+int blt_in_env(_mn *bii)
 {
 int i;
 char cpname[50] = {'\0'};
 char *var_copy = NULL;
 
+	/* check if it a NULL argument */
 if (bii->f[1] == NULL)
 print_environ(bii);
 else
@@ -25,6 +24,7 @@ var_copy = str_duplicate(env_get_key(cpname, bii));
 if (var_copy != NULL)
 env_set_key(cpname, bii->f[1] + i + 1, bii);
 
+				/* print the environ */
 print_environ(bii);
 if (env_get_key(cpname, bii) == NULL)
 {
@@ -49,9 +49,7 @@ return (0);
 
 /**
  * blt_set_env - a function that set env variables.
- *
  * @bii:a pointer to struct.
- *
  * Return: 0 if sucessfull.
  */
 
@@ -73,9 +71,7 @@ return (0);
 
 /**
  * blt_in_unset_env - a function that unsets env variables.
- *
  * @bii: a pointer to struct
- *
  * Return: 0 if successfull.
  */
 int blt_in_unset_env(_mn *bii)

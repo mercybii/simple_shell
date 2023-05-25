@@ -14,20 +14,19 @@ int check_file(char *full_path);
 
 int prog_fnd(_mn *bii)
 {
-
 int i = 0, ret_code = 0;
 char **directories;
 
-if (!bii->c)/*Check if input is NULL*/
+if (!bii->c)
 return (2);
-	/*Check if input is '/' || '.'(PATH)*/
+
 if (bii->c[0] == '/' || bii->c[0] == '.')
 return (check_file(bii->c));
 free(bii->f[0]);/*If not a PATH*/
 bii->f[0] = str_concat(str_duplicate("/"), bii->c);
 if (!bii->f[0])
 return (2);
-directories = _tok(bii);
+directories = _tok(bii);/*Tokenize to find X_OK*/
 if (!directories || !directories[0])
 {
 errno = 127;
@@ -39,12 +38,12 @@ directories[i] = str_concat(directories[i], bii->f[0]);
 ret_code = check_file(directories[i]);
 if (ret_code == 0 || ret_code == 126)
 {
-errno = 0;/*If file is found*/
+errno = 0;
 free(bii->f[0]);
 bii->f[0] = str_duplicate(directories[i]);
 free_array_of_pointers(directories);
 return (ret_code);/*If file is not found*/
-		}
+}
 }
 free(bii->f[0]);/*Free memory*/
 bii->f[0] = NULL;
@@ -55,7 +54,6 @@ return (ret_code);
 
 /**
  * _tok - tokenize the path.
- *
  * @bii: a pointer to struct
  *
  * Return: array of the  path
@@ -63,11 +61,13 @@ return (ret_code);
 
 char **_tok(_mn *bii)
 {
+	/*Variable declaration*/
 int i = 0;
-int counter_directories = 2;
+int counter_directories = 2;/*1st & last tkn*/
 char **tokens = NULL;
 char *PATH;
 
+	/* get the PATH*/
 PATH = env_get_key("PATH", bii);
 if ((PATH == NULL) || PATH[0] == '\0')
 {
@@ -80,10 +80,13 @@ for (i = 0; PATH[i]; i++)/*Iterate through PATH*/
 {
 if (PATH[i] == ':')/*Delimeter*/
 counter_directories++;
+
 }
 
+	/* reserve space for tokens*/
 tokens = malloc(sizeof(char *) * counter_directories);
 
+	/*tokenize and duplicate each token of PATH*/
 i = 0;
 tokens[i] = str_duplicate(_strtok(PATH, ":"));
 while (tokens[i++])
@@ -99,7 +102,6 @@ return (tokens);
 
 /**
  * check_file - checks if executable file exists
- *
  * @full_path: pointer to the full file name
  *
  * Return: 0 on successfull
@@ -107,10 +109,14 @@ return (tokens);
 
 int check_file(char *full_path)
 {
+	/*Structure declare*/
 struct stat sb;
 
+	/*Obtain info about file spcfd by user-arg*/
 if (stat(full_path, &sb) != -1)
 {
+		/*Check if file is a dir*/
+		/*Check if file has user execute permission*/
 if (S_ISDIR(sb.st_mode) ||  access(full_path, X_OK))
 {
 errno = 126;

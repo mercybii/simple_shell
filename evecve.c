@@ -3,25 +3,26 @@
 /**
  * _execve - executes a command.
  * @bii: a pointer to struct
+ *
  * Return: 0 if successfull.
  */
 int _execve(_mn *bii)
 {
-int retval = 0, status;
+int ret = 0, status;
 pid_t pidd;
 
-retval = blt_in_lst(bii);
-if (retval != -1)
-return (retval);
+ret = blt_in_lst(bii);
+if (ret != -1)/*checks if the cmd is a blt-in*/
+return (ret);
 
-retval = prog_fnd(bii);
-if (retval)
+ret = prog_fnd(bii);
+if (ret)/*checks if cmd is execve file*/
 {
-return (retval);
+return (ret);
 }
 else
 {
-		/* create a child process */
+
 pidd = fork();
 if (pidd == -1)
 {
@@ -30,8 +31,9 @@ exit(EXIT_FAILURE);
 }
 if (pidd == 0)
 {
-retval = execve(bii->f[0], bii->f, bii->ev);
-if (retval == -1)
+
+ret = execve(bii->f[0], bii->f, bii->env);
+if (ret == -1)
 perror(bii->c), exit(EXIT_FAILURE);
 }
 else
