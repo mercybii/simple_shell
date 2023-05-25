@@ -13,7 +13,7 @@ char **env;
 char **h;
 } _mn;
 
-typedef struct 
+typedef struct
 {
 char *builtin;
 int (*function)(_mn *bii);
