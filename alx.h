@@ -2,7 +2,7 @@
 #define ALX_H
 
 /**
- * Authour: Nick and Ann
+ * is the main hearder
  * File drp: Contains macros, func prototypes and structers
  */
 
@@ -21,15 +21,13 @@
 #include <fcntl.h>
 #include <stdio.h>
 
-#define COMMAND_PROMPT "#yoooh what is up$ "
+#define COMMAND_PROMPT "yes please!! "
 
 #define UNUSED __attribute__((unused))
 
 #define B_SIZ 1024
 
-
 #include "data_handling.h"
-
 
 #include "builtins.h"
 
@@ -40,7 +38,6 @@
 #include "simple_shell.h"
 
 
-/* Help information display macros */
 
 #define CD_HELP_INFO "cd=\n"\
 "cd: cd [dir]"\
@@ -80,4 +77,4 @@
 "\n\tIf no argument is provided, a list of available built-in commands will be displayed"
 
 
-#endif
+#endif 

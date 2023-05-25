@@ -113,7 +113,7 @@ bii->h[i] = NULL;/*Pointer to aliases*/
  */
 
 
-void bii(char *prompt, _mn *bii)
+void manu(char *prompt, _mn *bii)
 {
 	/*Variable declaration*/
 int error_code = 0, string_len = 0;
