@@ -92,7 +92,7 @@ getcwd(old_dir, 128);
 
 if (!str_compare(old_dir, new_dir, 0))
 
-{	
+{
 err_code = chdir(new_dir);
 if (err_code == -1)
 {

@@ -19,7 +19,7 @@ int _getline(_mn *bii)
 	if (!array_commands[0] || (array_operators[0] == '&' && errno != 0) ||
 		(array_operators[0] == '|' && errno == 0))
 	{
-		
+
 		for (i = 0; array_commands[i]; i++)
 		{
 			free(array_commands[i]);
@@ -30,11 +30,10 @@ int _getline(_mn *bii)
 		if (bytes_read == 0)
 			return (-1);
 
-	
 		i = 0;
 		do {
 			array_commands[i] = str_duplicate(_strtok(i ? NULL : buff, "\n;"));
-		
+
 			i = lgc_ops(array_commands, i, array_operators);
 		} while (array_commands[i++]);
 	}

@@ -106,7 +106,7 @@ bii->h[i] = NULL;/*Pointer to aliases*/
 
 
 /**
- * bii - A func that reads and execute user-input
+ * manu - A func that reads and execute user-input
  * @prompt: A pointer to Shell prompt
  * @bii: A pointer to struct
  *
