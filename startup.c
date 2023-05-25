@@ -8,7 +8,7 @@
  * Return: 0 if successful
  */
 
-int main (int ac, char *av[], char *env[])
+int main(int ac, char *av[], char *env[])
 {
 	_mn file_stat = {NULL}, *bii = &file_stat;
 	char *prompt = "";
