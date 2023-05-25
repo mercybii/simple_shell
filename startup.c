@@ -80,4 +80,44 @@ void lion(_mn @bii, int ac, char *av[], char **env)
 	}
 	bii->env[x] = NULL;
 	env = bii->env;
+	bii->h = malloc(sizeof(char *) * 20);
+	for (x = 0; x < 20; x++)
+	{
+		bii->h[x] = NULL;
+	}
+}
+
+/**
+ * manu - reads and exucutes user input data
+ * @prompt: points to the shell
+ * @bii: struct pointer
+ */
+
+void manu(char *prompt, _mn *bii)
+{
+	int error_code = 0, string_len = 0;
+	while (++(bii->d))
+	{
+		 _print(prompt);
+		 error_code = string_len = _getline(bii);
+		 if (error_code == EOF)
+		 {
+			 free_all_data(bii);
+			 exit(errno);
+		 }
+		 if (string_len >= 1)
+		 {
+			 alias_exp(bii);
+			 var_exp(bii);
+			 _token(bii);
+			 if (bii->f[0])
+			 {
+				 error_code = execve(bii);
+				 if (error_code != 0)
+					 _print_error(error_code, bii);
+			 }
+			 free_reccurent_data(bii);
+		 }
+	}
+}
 
