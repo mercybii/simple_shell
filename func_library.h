@@ -1,6 +1,7 @@
 #ifndef FUNC_LIBRARY_H
 #define FUNC_LIBRARY_H
 
+
 void _print(const char *string);
 int _getline(_mn *bii);
 char *_strtok(char *line, char *delim);
